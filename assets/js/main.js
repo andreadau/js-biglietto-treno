@@ -4,10 +4,15 @@ var numKm, eta, biglietto;
 numKm = prompt("Quanti km devi percorrere ?");
 // Prompt richiesta età
 eta = prompt("Quanti anni hai ?");
+// costo biglietto
+var biglietto = numKm * 0.21;
 // Condizione di non sconto sul biglietto 
-if (eta > 19 && eta < 65) {
-    document.getElementById('costo').innerHTML = numKm * 0.21; 
-} else if (eta < 18) {
-    document.getElementById('costo').innerHTML = (numKm * 0.21) - ((numKm * 0.21) * 0.2);
+if (eta < 18) {
+    document.getElementById('costo').innerHTML = biglietto - (biglietto * 0.2);
+} else if (eta >= 18 && eta < 65) {
+    document.getElementById('costo').innerHTML = biglietto;
+} else {
+    document.getElementById('costo').innerHTML = biglietto - (biglietto * 0.4);
 }
+
  
